@@ -51,5 +51,5 @@ This repository contains all learning materials, assignments, practice exercises
 * Mini Projects
 * Notes and Resources
 
-**Duration:** 1.5 Days
+
 
