@@ -1,0 +1,37 @@
+**Mini-project4**
+import sys
+
+def calculate_happiness():
+    # Ensure that all three command-line arguments are provided
+    # sys.argv[0] is the script name, so we need 3 more arguments
+    if len(sys.argv) < 4:
+        print("Error: Please provide exactly three space-separated strings as arguments.")
+        return
+
+    # Extract the strings from command-line arguments
+    str1 = sys.argv[1]
+    str2 = sys.argv[2]
+    my_numbers_str = sys.argv[3]
+
+    # Split the hyphenated strings and convert them into sets/lists of numbers
+    # Using sets for liked and disliked numbers optimizes lookup speeds
+    liked_numbers = set(str1.split('-'))
+    disliked_numbers = set(str2.split('-'))
+    my_numbers = my_numbers_str.split('-')
+
+    # Initialize happiness score
+    happiness = 0
+
+    # Calculate happiness based on the rules
+    for num in my_numbers:
+        if num in liked_numbers:
+            happiness += 1
+        elif num in disliked_numbers:
+            happiness -= 1
+        # If it's in neither, happiness remains unchanged
+
+    # Print the final output
+    print(happiness)
+
+if __name__ == "__main__":
+    calculate_happiness()
